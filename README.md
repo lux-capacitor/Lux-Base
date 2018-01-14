@@ -31,7 +31,7 @@ Store static assets in the /app sub-folders according to what it is. (Img, Sass,
 REMEMBER! -- If you add a new filetype asset, you need to add a corresponding webpack loader!
 
 #### Common Questions:
- - ["What is a webpack?"](https://webpack.js.org/concepts#loaders)
+ - ["What is a webpack?"](https://webpack.js.org/concepts)
  - ["What is a loader?"](https://webpack.js.org/concepts#loaders)
 
  EXAMPLE:
