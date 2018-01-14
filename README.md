@@ -67,4 +67,4 @@ Also note that the .gitignore might seem a bit excessive, but given that I've us
 
 # New Phone, Who Dis?
 
-Just some wierdo React-weilding front-end warlock with an unhealthy idol worship for JSON father Douglas Crockford, Brad Frost, and many others in this crazy community of keyboard ninjitsu. I also make neon and other light-based "Lumenist" art, poke me sometime on [Instagram](http://instagram.com/lux_capacitor) or on my site [http://lux-capacitor.com](http://lux-capacitor.com).
+Just some wierdo React-wielding front-end warlock with an unhealthy idol worship for JSON father Douglas Crockford, Brad Frost, and many others in this crazy community of keyboard ninjitsu. I also make neon and other light-based "Lumenist" art, poke me sometime on [Instagram](http://instagram.com/lux_capacitor) or on my site [http://lux-capacitor.com](http://lux-capacitor.com).
