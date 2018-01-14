@@ -4,7 +4,7 @@ npm-debug.log
 .npmrc
 .log
 .logs
-.lock
+*.lock
 
 
 # Common Directories
