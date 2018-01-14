@@ -1,0 +1,30 @@
+# Common Files
+.DS_store
+npm-debug.log
+.npmrc
+.log
+.logs
+.lock
+
+
+# Common Directories
+.tmp
+.predeploy
+.sass-cache
+node_modules*
+dist
+public
+react
+
+
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+
+# Build Artifacts
+Dockerrun.aws.json
+docker_cache
+.babel_cache
