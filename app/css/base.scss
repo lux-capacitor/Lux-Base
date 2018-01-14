@@ -1,0 +1,129 @@
+/**************************************************************
+ *
+ *                      CSS RESET
+ *
+ ***************************************************************/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{box-sizing:border-box;border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+
+/***************************************************************
+ *
+ *                      FRAMEWORK
+ *	Note: Some of this helps mobile work easier for you, if you
+ *        remove it, be sure to check your site on a REAL device
+ *
+ ***************************************************************/
+ body {
+ 	margin: 0;
+ 	padding: 0;
+ 	color: #fff;
+ 	overflow: hidden;
+ 	background: #000;
+ 	font-family: helvetica;
+
+	 #react-root { //Mobile <3
+	 	width: 100vw;
+	 	height: 100vh;
+	 	margin: 0;
+	 }
+
+	 #welcome {
+	 	color: #0ff;
+	 	font-size: 3rem;
+	 	padding: 20px 0 0;
+	 	text-align: center;
+	 	font-family: 'luxFont', helvetica;
+	 }
+
+	 #lux-footer {
+	 	position: absolute;
+	 	bottom: 5px;
+	 	left: 5px;
+
+	 	#avatar {
+	 		width: 35px;
+	 		height: 35px;
+	 		position: relative;
+	 		border-radius: 18px;
+	 		display: inline-block;
+	 		background: url( '/app/img/avatar.jpg' ) 0 0 / contain no-repeat;
+	 	}
+
+	 	#username {
+	 		top: -11px;
+	 		color: #fff;
+	 		padding-left: 5px;
+	 		position: relative;
+	 		display: inline-block;
+	 		font-family: helvetica;
+
+	 		a {
+	 			color: #0ff;
+	 			text-decoration: none;
+
+	 			&:hover {
+	 				opacity: 0.9;
+	 				color: #ff00b8;
+	 			}
+	 		}
+	 	}
+	 }
+}
+
+
+
+/* ANIMATION - Animation & BG Color Fade Effects
+-------------------------------------------------- */
+.animate50 	 { transition: all 0.5s ease-in-out; }
+.animate150  { transition: all 1.5s ease-in-out; }
+.animateLong { transition: all 5s ease-in-out;   }
+
+.colorFade1 {
+	background: linear-gradient( 71deg, #d80ff1, #f02890, #4e01b7 );
+	background-size: 600% 600%;
+	animation: colorFadeOne 20s linear infinite;
+}
+
+@keyframes colorFadeOne { 
+    0%{ background-position: 20% 0%}
+    50%{ background-position: 91% 100% }
+    100%{ background-position: 20% 0% }
+}
+
+
+/* FONTS - Various Font Iterations
+-------------------------------------------------- */
+// COMMENT OUT IF YOU DONT WANT TO USE! (Webpack is setup for this..)
+// @font-face {
+// 	font-family: 'luxFont';
+// 	src: url('../fonts/04B_30.eot');
+// 	src: url('../fonts/04B_30.eot?#iefix') format('embedded-opentype'),
+// 		 url('../fonts/04B_30.woff2') format('woff2'),
+// 		 url('../fonts/04B_30.woff') format('woff'),
+// 		 url('../fonts/04B_30.ttf') format('truetype'),
+// 		 url('../fonts/04B_30.svg#04b30') format('svg');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+
+
+
+
+/***************************************************************
+ *
+ *                     	   MAIN STYLES
+ *
+ ***************************************************************/
+/* Sample Usages:
+	- Images : background: url( '../img/avatar-lux.jpg' ) 0 0 / contain no-repeat;
+	- Data   : [data-menu-active='true'] { style }
+*/
+
+//Start making stuffs!
+
+
+
+
+
+
