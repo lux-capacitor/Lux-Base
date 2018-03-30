@@ -48,6 +48,8 @@
   },
   "dependencies": {
     "babel-loader": "^7.0.0",
+    "fetch": "^1.1.0",
+    "lodash.debounce": "^4.0.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   }
