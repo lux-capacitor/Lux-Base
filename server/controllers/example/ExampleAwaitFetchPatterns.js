@@ -1,7 +1,7 @@
 /* GET REQUESTS
  *    Default API = 'envr.sourceApiBaseUrl'
  *------------------------------------*/
-const fetch = require( 'node-fetch' );
+const fetch = require( 'isomorphic-fetch' );
 const envr = require( '../../config/config-envr' );
 const help = require( '../helpers/helper-methods' );
 const { defaults, getApiData } = envr;
