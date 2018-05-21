@@ -2,19 +2,18 @@
 
 
 ```
-      ___           ___                    ___           ___          _____          ___                    ___           ___           ___           ___                 
-     /  /\         /  /\                  /__/\         /  /\        /  /::\        /  /\                  /  /\         /  /\         /  /\         /  /\          ___   
-    /  /::\       /  /:/_                 \  \:\       /  /::\      /  /:/\:\      /  /:/_                /  /::\       /  /:/_       /  /::\       /  /:/         /  /\  
-   /  /:/\:\     /  /:/ /\                 \  \:\     /  /:/\:\    /  /:/  \:\    /  /:/ /\              /  /:/\:\     /  /:/ /\     /  /:/\:\     /  /:/         /  /:/  
-  /  /:/  \:\   /  /:/ /::\            _____\__\:\   /  /:/  \:\  /__/:/ \__\:|  /  /:/ /:/_            /  /:/~/:/    /  /:/ /:/_   /  /:/~/::\   /  /:/  ___    /  /:/   
- /__/:/ \__\:\ /__/:/ /:/\:\    ___   /__/::::::::\ /__/:/ \__\:\ \  \:\ /  /:/ /__/:/ /:/ /\   ___    /__/:/ /:/___ /__/:/ /:/ /\ /__/:/ /:/\:\ /__/:/  /  /\  /  /::\   
- \  \:\ /  /:/ \  \:\/:/~/:/   /__/\  \  \:\~~\~~\/ \  \:\ /  /:/  \  \:\  /:/  \  \:\/:/ /:/  /__/\   \  \:\/:::::/ \  \:\/:/ /:/ \  \:\/:/__\/ \  \:\ /  /:/ /__/:/\:\  
-  \  \:\  /:/   \  \::/ /:/    \__\/    \  \:\  ~~~   \  \:\  /:/    \  \:\/:/    \  \::/ /:/  \__\/    \  \::/~~~~   \  \::/ /:/   \  \::/       \  \:\  /:/  \__\/  \:\ 
-   \  \:\/:/     \__\/ /:/              \  \:\        \  \:\/:/      \  \::/      \  \:\/:/              \  \:\        \  \:\/:/     \  \:\        \  \:\/:/        \  \:\
-    \  \::/        /__/:/                \  \:\        \  \::/        \__\/        \  \::/                \  \:\        \  \::/       \  \:\        \  \::/          \__\/
-     \__\/         \__\/                  \__\/         \__\/                       \__\/                  \__\/         \__\/         \__\/         \__\/                
+       ___           ___          _____          ___                    ___           ___           ___           ___                 
+      /__/\         /  /\        /  /::\        /  /\                  /  /\         /  /\         /  /\         /  /\          ___   
+      \  \:\       /  /::\      /  /:/\:\      /  /:/_                /  /::\       /  /:/_       /  /::\       /  /:/         /  /\  
+       \  \:\     /  /:/\:\    /  /:/  \:\    /  /:/ /\              /  /:/\:\     /  /:/ /\     /  /:/\:\     /  /:/         /  /:/  
+   _____\__\:\   /  /:/  \:\  /__/:/ \__\:|  /  /:/ /:/_            /  /:/~/:/    /  /:/ /:/_   /  /:/~/::\   /  /:/  ___    /  /:/   
+  /__/::::::::\ /__/:/ \__\:\ \  \:\ /  /:/ /__/:/ /:/ /\   ___    /__/:/ /:/___ /__/:/ /:/ /\ /__/:/ /:/\:\ /__/:/  /  /\  /  /::\   
+  \  \:\~~~~~\/ \  \:\ /  /:/  \  \:\  /:/  \  \:\/:/ /:/  /__/\   \  \:\/:::::/ \  \:\/:/ /:/ \  \:\/:/__\/ \  \:\ /  /:/ /__/:/\:\  
+   \  \:\        \  \:\  /:/    \  \:\/:/    \  \::/ /:/   \__\/    \  \::/~~~~   \  \::/ /:/   \  \::/       \  \:\  /:/  \__\/  \:\ 
+    \  \:\        \  \:\/:/      \  \::/      \  \:\/:/              \  \:\        \  \:\/:/     \  \:\        \  \:\/:/        \  \:\
+     \  \:\        \  \::/        \__\/        \  \::/                \  \:\        \  \::/       \  \:\        \  \::/          \__\/
+      \__\/         \__\/                       \__\/                  \__\/         \__\/         \__\/         \__\/                
 ```
-=====================
 
 A boilerplate for quickly spinning up and crafting Node APIs + React / Redux Apps without all the setup headaches.
 
@@ -38,7 +37,7 @@ A boilerplate for quickly spinning up and crafting Node APIs + React / Redux App
 Clone the boilerplate locally first...
 
 ```
-git clone git@bitbucket.org:onestop/onestop.merlin.git
+git clone git@github.com:lux-capacitor/lux-base.git
 ```
 
 
@@ -49,7 +48,7 @@ For the initial setup, you'll want Node.js installed globally on your machine, t
 
 ###Initial Setup: 
 ```
-// If you do not have node, go here first : https://nodejs.org/en/download/
+*** If you do not have node, go here : https://nodejs.org/en/download ***
 
 npm i  //(this is short for 'npm install' )
 ```
@@ -67,7 +66,7 @@ More than likely, if you are having trouble getting the server up and running, y
 
 #### Common Setup Issues:
  - npm: command not found - ["Install Node!"](https://nodejs.org/en/download/)
- - ["..But I'm on a PC!"](https://www.apple.com/macbook-pro)
+ - ["..But I'm on a PC!"](https://www.apple.com/macbook-pro) :p
 
 
 
@@ -86,23 +85,23 @@ index.html ( Head tags, metadata, and app root-react div live here )
         |-- App.jsx         ( CORE APP : First parent component )
         |
         |
-        |-- components        ( React Components, organize into sub-folders by parent )
+        |-- /components        ( React Components, organize into sub-folders by parent )
         |        |-- example  ( React-components for 'exampleApp' )
         |
         |
-        |-- css
-        |    |------ app.scss   ( SCSS Manifest File )
-        |    |------ base       ( SCSS Reset, Vars, and Core styles )
-        |    |------ Components ( SCSS for each component )
+        |-- /css
+        |     |------ app.scss   ( SCSS Manifest File )
+        |     |------ base       ( SCSS Reset, Vars, and Core styles )
+        |     |------ Components ( SCSS for each component )
         |
         |
-        |-- fonts ( FONTS : Webpack handles copy into /dist )
+        |-- /fonts ( FONTS : Webpack handles copy into /dist )
         |
         |
-        |-- img   ( IMAGE : All image assets live here )
+        |-- /img   ( IMAGE : All image assets live here )
         |
         |
-        |-- redux 
+        |-- /redux 
                |-- actions    ( ACTIONS : Defines functions that interact w/ reducer and import into components )
                |-- constants  ( CONSTANTS : Split file for declaring all action 'Types' )
                |-- reducers   ( REDUCERS : Handles state changes in redux store and ingestion of actions )
@@ -118,8 +117,8 @@ server
    |-- server.js  ( ROOT : webpack setup + configure controller routing - split as it grows! )
    |
    |
-   |-- controllers ( CONTROLLERS : API route definitions, break into folders by route )
-   |-- helpers     ( HELPERS : shared, reusable methods + expressServer wrapper ) 
+   |-- /controllers ( CONTROLLERS : API route definitions, break into folders by route )
+   |-- /helpers     ( HELPERS : shared, reusable methods + expressServer wrapper ) 
 ```
 
 
@@ -127,15 +126,15 @@ server
 Basically, simple components will want to start with a lowercase letter, full-on react components will start as Capital letter to emphasize distinction aside from '.js vs .jsx'
 ```
 Example #1 : App.jsx
-	- React Component with State
-	- Starts with Capital Letter
-	- .JSX
+  - React Component with State
+  - Starts with Capital Letter
+  - .JSX
 
 
 Example #2 : footerPanel.js
-	- Reusable, simple component with minimal data ingestion and no local state
-	- Lowercase first letter, camel case name
-	- .js
+  - Reusable, simple component with minimal data ingestion and no local state
+  - Lowercase first letter, camel case name
+  - .js
 ```
 
 
