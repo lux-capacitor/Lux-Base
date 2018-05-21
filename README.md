@@ -1,70 +1,149 @@
-Lux-Base
+# Onestop.Node-React
+
+
+```
+      ___           ___                    ___           ___          _____          ___                    ___           ___           ___           ___                 
+     /  /\         /  /\                  /__/\         /  /\        /  /::\        /  /\                  /  /\         /  /\         /  /\         /  /\          ___   
+    /  /::\       /  /:/_                 \  \:\       /  /::\      /  /:/\:\      /  /:/_                /  /::\       /  /:/_       /  /::\       /  /:/         /  /\  
+   /  /:/\:\     /  /:/ /\                 \  \:\     /  /:/\:\    /  /:/  \:\    /  /:/ /\              /  /:/\:\     /  /:/ /\     /  /:/\:\     /  /:/         /  /:/  
+  /  /:/  \:\   /  /:/ /::\            _____\__\:\   /  /:/  \:\  /__/:/ \__\:|  /  /:/ /:/_            /  /:/~/:/    /  /:/ /:/_   /  /:/~/::\   /  /:/  ___    /  /:/   
+ /__/:/ \__\:\ /__/:/ /:/\:\    ___   /__/::::::::\ /__/:/ \__\:\ \  \:\ /  /:/ /__/:/ /:/ /\   ___    /__/:/ /:/___ /__/:/ /:/ /\ /__/:/ /:/\:\ /__/:/  /  /\  /  /::\   
+ \  \:\ /  /:/ \  \:\/:/~/:/   /__/\  \  \:\~~\~~\/ \  \:\ /  /:/  \  \:\  /:/  \  \:\/:/ /:/  /__/\   \  \:\/:::::/ \  \:\/:/ /:/ \  \:\/:/__\/ \  \:\ /  /:/ /__/:/\:\  
+  \  \:\  /:/   \  \::/ /:/    \__\/    \  \:\  ~~~   \  \:\  /:/    \  \:\/:/    \  \::/ /:/  \__\/    \  \::/~~~~   \  \::/ /:/   \  \::/       \  \:\  /:/  \__\/  \:\ 
+   \  \:\/:/     \__\/ /:/              \  \:\        \  \:\/:/      \  \::/      \  \:\/:/              \  \:\        \  \:\/:/     \  \:\        \  \:\/:/        \  \:\
+    \  \::/        /__/:/                \  \:\        \  \::/        \__\/        \  \::/                \  \:\        \  \::/       \  \:\        \  \::/          \__\/
+     \__\/         \__\/                  \__\/         \__\/                       \__\/                  \__\/         \__\/         \__\/         \__\/                
+```
 =====================
 
-Lightweight, React-based boilerplate to get you instantly creating beautiful sites instead of fiddling with foundation. 
+A boilerplate for quickly spinning up and crafting Node APIs + React / Redux Apps without all the setup headaches.
 
 
+# What's Inside?
+```
+ - Node.js
+ - Express
+ - React (v16.3 - Embrace New lifecycle methods!)
+ - Redux
+ - React-Router (v4)
+ - Webpack
+ - Mocha
+ - Babel
+ - Fetch
+```
 
-# Where'd You Get That?
 
-Clone yer'self da repo right quick 'ere... 
+# Where Does This Live?
+
+Clone the boilerplate locally first...
 
 ```
-git clone git@github.com:lux-capacitor/lux-base.git
+git clone git@bitbucket.org:onestop/onestop.merlin.git
 ```
+
 
 
 # How Do I Turn This On?
 
-Build all the whirly-gig doo-dads 'an sech..
+For the initial setup, you'll want Node.js installed globally on your machine, then you'll simply need to run an 'npm install' once and you should be good to go. Check out the package.json file for more info on what 'npm run start' is actually doing behind the scenes.
 
+###Initial Setup: 
 ```
-npm/yarn install (dealers choice..)
-npm/yarn start
-open http://localhost:9001 (it's over 9000)
-```
+// If you do not have node, go here first : https://nodejs.org/en/download/
 
-
-# But Where's The Cupholder?
-
-Store static assets in the /app sub-folders according to what it is. (Img, Sass, Font, etc)
-REMEMBER! -- If you add a new filetype asset, you need to add a corresponding webpack loader!
-
-#### Common Questions:
- - ["What's a webpack?"](https://webpack.js.org/concepts)
- - ["What's a loader?"](https://webpack.js.org/concepts#loaders)
-
- EXAMPLE:
-```
- SASS URL : '/app/img/avatar.jpg' - this is where the main img assets for the top level component could live. Further tree-expansion is dealer choice. 
+npm i  //(this is short for 'npm install' )
 ```
 
-Organization is easily redefined by changing where you are (A.) Referencing images from in your sass or (B.) Changing where the IMG elements are referencing in your sub-components. I HIGHLY SUGGEST organizing stylesheets / imagery with the individual componets as you developo, ingesting them where they are used to adhere to a modular approach. If you'd prefer using inline js style sheets like the fine work by done with chroma.js, simply install it (npm i chroma --save) and import it in your components.
+###Start Application / Server:
+```
+npm run start
+```
 
-I kept choices like that up to you though as this is simply the springboard to get you making commponents in 60 seconds, not to box you into a certain style approach. Each project is unique, don't force yourself to use complex tools should the need not be present.  
+
+
+# My Local Is Drunk - HELP!
+
+More than likely, if you are having trouble getting the server up and running, you are missing a dependency on your local system. Below are various links that might be of use. 
+
+#### Common Setup Issues:
+ - npm: command not found - ["Install Node!"](https://nodejs.org/en/download/)
+ - ["..But I'm on a PC!"](https://www.apple.com/macbook-pro)
 
 
 
-# You've Got Some Lint On You...
+# File Structure:
 
-React ES Lint config set to its recommended settings, feel free to modify it's configuration under the .eslintrc file
+The file structure is pretty straight-forward and can be easily modified to suit your usage as need be - its all just imports anyway, so feel free to hack away at it!  
+Below is a tree map of the tool's structure.
 
 ```
-npm run lint
+CLIENT-SIDE : Architecture
+
+index.html ( Head tags, metadata, and app root-react div live here )
+   |
+   |-- app
+        |-- AppWrapper.jsx  ( MIDDLEWARE WRAPPER : React-Router + Redux Store wrapping on Core )
+        |-- App.jsx         ( CORE APP : First parent component )
+        |
+        |
+        |-- components        ( React Components, organize into sub-folders by parent )
+        |        |-- example  ( React-components for 'exampleApp' )
+        |
+        |
+        |-- css
+        |    |------ app.scss   ( SCSS Manifest File )
+        |    |------ base       ( SCSS Reset, Vars, and Core styles )
+        |    |------ Components ( SCSS for each component )
+        |
+        |
+        |-- fonts ( FONTS : Webpack handles copy into /dist )
+        |
+        |
+        |-- img   ( IMAGE : All image assets live here )
+        |
+        |
+        |-- redux 
+               |-- actions    ( ACTIONS : Defines functions that interact w/ reducer and import into components )
+               |-- constants  ( CONSTANTS : Split file for declaring all action 'Types' )
+               |-- reducers   ( REDUCERS : Handles state changes in redux store and ingestion of actions )
+               |-- store      ( STORE : Contains single 'configureStore' file, bundles reducers and adds middleware )
+
+
+
+
+SERVER-SIDE : Architecture
+
+server
+   |
+   |-- server.js  ( ROOT : webpack setup + configure controller routing - split as it grows! )
+   |
+   |
+   |-- controllers ( CONTROLLERS : API route definitions, break into folders by route )
+   |-- helpers     ( HELPERS : shared, reusable methods + expressServer wrapper ) 
 ```
-Also note that the .gitignore might seem a bit excessive, but given that I've used this piecemeal for several things I figured I'd just cover the primary bases, can't hurt anything really. 
 
 
+### Naming Conventions:
+Basically, simple components will want to start with a lowercase letter, full-on react components will start as Capital letter to emphasize distinction aside from '.js vs .jsx'
+```
+Example #1 : App.jsx
+	- React Component with State
+	- Starts with Capital Letter
+	- .JSX
 
-# Props on Tap:
 
-* [React](https://reactjs.org/)
-* [Webpack](https://webpack.js.org/concepts)
-* [babel-loader](https://github.com/babel/babel-loader)
-* [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+Example #2 : footerPanel.js
+	- Reusable, simple component with minimal data ingestion and no local state
+	- Lowercase first letter, camel case name
+	- .js
+```
 
 
+# Documentation:
+* [Node.js](https://nodejs.org/en)
+* [Express](https://www.npmjs.com/package/readline-sync)
+* [node-fetch](https://www.npmjs.com/package/node-fetch)
+* [react.js](https://reactjs.org)
+* [redux.js](https://redux.js.org)
+* [react-router](https://github.com/ReactTraining/react-router)
 
-# New Phone, Who Dis?
-
-Just some wierdo React-wielding front-end warlock with an unhealthy idol worship for JSON father Douglas Crockford, Brad Frost, and many others in this crazy community of keyboard ninjitsu. I also make neon and other light-based "Lumenist" art, poke me sometime on [Instagram](http://instagram.com/lux_capacitor) or web [http://lux-capacitor.com](http://lux-capacitor.com).
