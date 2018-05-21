@@ -2,20 +2,23 @@ const path = require( 'path' );
 const webpack = require( 'webpack' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
+
 
 // ENVR : Are We Prod or Dev? (term "mode" comes from webpack 4)
 const envrConfig = {
-  mode: 'dev',
-  minify: false
+  mode: 'dev', //'prod'
+  minify: true
 }
 
-//PLUGINS : BASE + IMAGE HANDLER! (straight copy for now :p )
+
+
+
+//PLUGINS : ALL : Also sets where pipe certain actions results
 let plugins = [
   new ExtractTextPlugin( 'styles.css' ),
   new CopyWebpackPlugin([
     { 
-      from:'app/img', 
+      from:'app/img',  //Basic straight copy
       to:'img' 
     } 
   ])
@@ -24,25 +27,24 @@ let plugins = [
 
 //PLUGINS : PROD-ONLY : Minify Scripts
 if ( envrConfig.minify ) {
-  plugins = plugins.concat( [
-    // new CleanWebpackPlugin([ 'dist' ]), // Supposed to clean dist folder, doens't recompile sadly on start
+  plugins = plugins.concat([
     new webpack.DefinePlugin({ //From Reactjs.org docs 
       'process.env.NODE_ENV': JSON.stringify( 'production' )
     }),
+
     new webpack.optimize.UglifyJsPlugin({
       minimize: envrConfig.minify,
       compress: {
         warnings: false
       }
     })
-  ] );
+  ]);
 }
 
 
-//CONFIG : Webpack Setup
-const config = {
-  // devtool: 'source-map', //Sourcemaps for dev builds
 
+//CONFIG : Actual Webpack Setup
+module.exports = {
   entry: [
     'babel-polyfill', //Add babel into bundle
     './app/AppWrapper.jsx'
@@ -77,13 +79,13 @@ const config = {
         use: ExtractTextPlugin.extract({
           use: [
             { 
-              loader: 'css-loader', 
+              loader: 'css-loader', //So we can minimize
               options: { 
                 importLoaders: 1,
                 minimize: envrConfig.minify
               } 
             },
-            'postcss-loader',
+            'postcss-loader', //Auto-prefixing built-in
             'sass-loader'
           ]
         })
@@ -93,12 +95,3 @@ const config = {
 
   plugins //Plugins Arr built up top
 };
-
-
-module.exports = config;
-
-
-
-
-
-
