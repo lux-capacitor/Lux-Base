@@ -1,0 +1,93 @@
+/***************************************************************
+ *                       EXAMPLE STYLES
+ ***************************************************************/
+.example-app-wrapper {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	box-shadow: $headerInsetShadow;
+
+	#example-footer {
+		left: 0;
+		bottom: 0;
+		z-index: 1000;
+		background: $baseDark;
+		position: absolute;
+	    padding: 5px 5px 2px;
+	    border-top-right-radius: 20px;
+
+		#avatar {
+			width: 35px;
+			height: 35px;
+			position: relative;
+			border-radius: 18px;
+			display: inline-block;
+			background: url( '/img/exampleImage.jpg' ) 0 0 / contain no-repeat;
+		}
+
+		#username-msg {
+			top: -11px;
+			color: $textLight;
+			padding-right: 5px;
+			position: relative;
+			display: inline-block;
+
+			a {
+				color: #0FF0FF;
+				text-decoration: none;
+
+				&:hover {
+					color: #ff0082;
+				}
+			}
+		}
+	}
+
+	// DoNotPushButton.js
+	.do-not-push-button {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate3d( -50%, -50%, 0 ); //Button align center
+	    width: 120px;
+	    background: #c40009;
+	    color: $textLight;
+	    text-align: center;
+	    height: 120px;
+	    cursor: pointer;
+	    border-radius: 80px;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    box-shadow: $downwardBoxShadow, $upwardBoxShadow, $headerInsetShadow;
+
+	    &:hover {
+	    	background: #ff000c;
+	    }
+
+	    // So it doesn't try to let you select the text
+	    .prevent-text-select {
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    z-index: 20;
+		}
+	    span {
+	    	pointer-events: none;
+	    }
+	}
+
+	.times-pushed {
+	    font-size: 2rem;
+	    text-align: center;
+	    position: absolute;
+	    padding: 5px;
+	    background: rgba(0, 0, 0, 0.25);
+	    box-shadow: $downwardBoxShadow, $upwardBoxShadow, $headerInsetShadow;
+	    border-radius: 5px;
+	    top: 50%;
+	    left: 50%;
+	    margin-top: 100px;
+	    transform: translate( -50%, -50% );
+	}
+}
