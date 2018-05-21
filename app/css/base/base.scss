@@ -1,0 +1,125 @@
+/***************************************************************
+ *                         BASE
+ *
+ *	Basic css breakdowns, styling and color definitions to 
+ *  be spring-board your styling if desired.
+ ***************************************************************/
+// BASE COLORS
+$baseBg: #212133; 	  // BG Base color in BG Gradient
+$baseBgDark: #12121D; // BG Base darker color in BG Gradient
+$baseDark: #282742;   // Panel backing color
+$baseMedium: #453f71; // Header type colors
+$baseLight: #76509C;  // Highlight Color
+
+// TEXT
+$textLight: #F7F0EA;
+$textMedium: #575555;
+$textDark: #333333;
+
+// SHADOWS
+$headerInsetShadow: inset 0px 0px 50px 0px rgba(0, 0, 0, 0.2);
+$headerTextShadow: 0px 1px 5px #000;
+$upwardBoxShadow: -2px 0px 5px rgba(0, 0, 0, 0.60);
+$downwardBoxShadow: 1px 2px 3px rgba(0, 0, 0, 0.60);
+
+
+
+/* FONTS - Various Font Iterations
+ * Remember, reference is from App.scss, hence ../ not ../../
+-------------------------------------------------- */
+.font1 { font-family: 'helvetica neue'; } 		// Header Font
+
+
+
+
+/* BASE-FRAME : Few mobile friendly defaults..
+-------------------------------------------------- */
+html,
+body {
+	position: fixed; //iOS safari behaves better...
+}
+body {
+	height: 100vh;
+	width: 100vw;
+ 	margin: 0;
+ 	padding: 0;
+ 	color: $textLight;
+ 	overflow: hidden;
+ 	background: $baseBg;
+}
+#react-root {
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+}
+a {
+	text-decoration: none;
+}
+
+
+
+// MEDIA QUERY BREAKDOWNS:
+$iphonePlus: 414px;
+$tabletPortrait: 768px;
+$tabletLandscape: 1024px;
+$desktop: 1200px;
+$largeDesktop: 1400px; //13" macbook is 1366px so this will only apply for 'large' screens
+
+// Mobile : Portrait : Anything 414px or higher will be included, 
+// 					   iOS PLUS devices have some nice resolutions to do extra with
+@mixin media-414-up {
+  @media ( min-width: ( #{$iphonePlus} ) ) {
+    @content;
+  }
+}
+
+// Tablet : Portrait : Anything 768px or higher will be included
+@mixin media-768-up {
+  @media ( min-width: ( #{$tabletPortrait} ) ) {
+    @content;
+  }
+}
+
+// Tablet : Above Portrait : Anything 1024px or higher will be included
+@mixin media-769-up {
+  @media ( min-width: ( #{$tabletPortrait + 1} ) ) {
+    @content;
+  }
+}
+
+// Tablet : Landscape : Anything 1024px or higher will be included
+@mixin media-1024-up {
+  @media ( min-width: ( #{$tabletLandscape} ) ) {
+    @content;
+  }
+}
+
+// Laptop : Above Landscape : Anything 1025px or higher will be included
+@mixin media-1025-up {
+  @media ( min-width: ( #{$tabletLandscape + 1} ) ) {
+    @content;
+  }
+}
+
+// Desktop : Desktop Screens : Anything 1200px or higher will be included
+@mixin media-1200-up {
+  @media ( min-width: ( #{$desktop} ) ) {
+    @content;
+  }
+}
+
+// Desktop : Cinema Display : Anything 1400px or higher will be included
+@mixin media-1400-up {
+  @media ( min-width: ( #{$largeDesktop} ) ) {
+    @content;
+  }
+}
+
+
+
+/* ANIMATION - Animation & BG Color Fade Effects
+-------------------------------------------------- */
+.animate25 	 { transition: all 0.25s ease-in-out; }
+.animate50 	 { transition: all 0.5s ease-in-out;  }
+.animate75 	 { transition: all 0.75s ease-in-out;  }
+.animate150  { transition: all 1.5s ease-in-out;  }

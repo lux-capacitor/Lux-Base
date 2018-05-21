@@ -1,2 +1,6 @@
-// Top-level css file, import scss here..
-@import 'base';
+// BASE : Base layer and css reset
+@import 'base/reset.scss';
+@import 'base/base.scss';
+
+// COMPONENTS : Styles for each component in the site
+@import 'components/example.scss'; //REMOVE BEFORE GOING LIVE
