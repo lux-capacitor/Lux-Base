@@ -46,14 +46,14 @@ git clone git@github.com:lux-capacitor/lux-base.git
 
 For the initial setup, you'll want Node.js installed globally on your machine, then you'll simply need to run an 'npm install' once and you should be good to go. Check out the package.json file for more info on what 'npm run start' is actually doing behind the scenes.
 
-###Initial Setup: 
+### Initial Setup: 
 ```
-*** If you do not have node, go here : https://nodejs.org/en/download ***
+*** Don't have Node?  https://nodejs.org/en/download ***
 
-npm i  //(this is short for 'npm install' )
+npm i        (shorthand for 'npm install' )
 ```
 
-###Start Application / Server:
+### Start Application / Server:
 ```
 npm run start
 ```
