@@ -1,4 +1,4 @@
-# Onestop.Node-React
+# Lux-Base (Node-React Flavored!)
 
 
 ```
@@ -66,7 +66,7 @@ More than likely, if you are having trouble getting the server up and running, y
 
 #### Common Setup Issues:
  - npm: command not found - ["Install Node!"](https://nodejs.org/en/download/)
- - ["..But I'm on a PC!"](https://www.apple.com/macbook-pro) :p
+ - ["Windows Needs an Update"](https://www.apple.com/macbook-pro) :p
 
 
 
