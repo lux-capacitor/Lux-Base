@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const methods = require( './example-methods' );
+const methods = require( '../../methods/example-methods' );
 
 /*****************************************************************************
  * EXAMPLE ROUTE : 
