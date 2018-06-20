@@ -1,4 +1,4 @@
-/* FRONT-END : OS-Node-React : Root Component Wrapper for React-Router + Redux
+/* FRONT-END : Lux-Base : Root Component Wrapper for React-Router + Redux
  *
  *   SUMMARY : 
  *   	First JS file, comes after index.html that is providing our 'react-root' div.
