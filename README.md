@@ -118,6 +118,7 @@ server
    |
    |
    |-- /controllers ( CONTROLLERS : API route definitions, break into folders by route )
+   |-- /methods     ( METHODS : get-methods.js, post-methods.js, etc for actual calls / usage in controllers)
    |-- /helpers     ( HELPERS : shared, reusable methods + expressServer wrapper ) 
 ```
 
