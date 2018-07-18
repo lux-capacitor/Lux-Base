@@ -1,19 +1,34 @@
 /*
  *                SERVER - Express Based, Node-Powered
  *****************************************************************************/
-const Server = require( './helpers/expressServer.js' ); // Wrapped Express Server Init
-const bodyParser = require( 'body-parser' );  // Lets us parse body JSON from POST requests
-const path = require( 'path' ); // URL Path Helper
+const Server = require( './helpers/expressServer.js' ); // EXPRESS : Wrapped Express Server Init
+const cookieParser = require('cookie-parser'); // PARSE : Helps read Cookie headers into "req.cookies" with an object keyed by the cookie names.
+const bodyParser = require( 'body-parser' );   // PARSE : Helps read body JSON from POST requests
+const path = require( 'path' );                // URL : Path Helper
+require( 'dotenv' ).config();                  // ENV VARS : Sets up and loads in the .env file to server
 
-const port = process.env.PORT || 8080; // Port config
-const app = Server.app();              // Our Wrapped Express Server start method
 
 
-//MIDDLEWARE : POST JSON : Handler for POST body consumption
+
+/*   INITALIZE : Specify Port, init server, setup client-side locations
+ *****************************************************************************/
+const port = process.env.PORT || 8080;  // PORT : Configure port to listen on
+const app = Server.app();               // EXPRESS : Start a new server namespace of "app"
+
+
+
+
+
+/*   MIDDLEWARE : Specify Port and Init Express Server
+ *****************************************************************************/
+// POST JSON : Handler for POST body consumption
 app.use( bodyParser.urlencoded({ extended: false }) );
 app.use( bodyParser.json() );
 
-// MIDDLEWARE : DEV - WEBPACK : Hot Reloading : Dev Builds only 
+// COOKIES : Handler for piping header cookies into a cookie object on req
+app.use( cookieParser() );
+
+// DEV - WEBPACK : Hot Reloading : Dev Builds only 
 if ( process.env.NODE_ENV !== 'production' ) {
   const webpack = require( 'webpack' );
   const webpackDevMiddleware = require( 'webpack-dev-middleware' );
@@ -30,21 +45,23 @@ if ( process.env.NODE_ENV !== 'production' ) {
 
 
 
-// SERVER : AWAKEN!
+
+/*   START : Activates express server and listens on configured port
+ *****************************************************************************/
 app.listen( port )
-console.log( `Listening at http://localhost:${port}` );
+console.log( `Up and running @ http://localhost:${port}` );
 
 
 
 
-/******************************************************************************
- *                 ROUTER : API + Front End
- ******************************************************************************/
+/*   ROUTER : Read in order of execution, setup url routes in your app
+ *****************************************************************************/
+// API : Define API Routes + Map to controllers
 const ExampleController = require( './controllers/example/ExampleController.js' );
 app.use( '/example', ExampleController );
 
 
-// FRONT-END : Let any route NOT /api pass through to the react application!
+// CLIENT : Routes NOT staring with /dist (re: publicPath in expressServer) will hit index so react-router can handle
 app.get( '*', function( req, res ) {
   res.sendFile( path.resolve( __dirname, '../', 'index.html' ) );
 });
