@@ -2,18 +2,20 @@ const path = require( 'path' );
 const webpack = require( 'webpack' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+require( 'dotenv' ).config(); // ENV VARS : Sets up and loads in the .env file to server
 
 
-// ENVR : Are We Prod or Dev? (term "mode" comes from webpack 4)
-const envrConfig = {
-  mode: 'dev', //'prod'
-  minify: true
+/*  ENVR : Are We Prod or Dev? (term "mode" comes from webpack 4)
+ *****************************************************************************/
+const envr = {
+  mode: process.env.NODE_ENV, //Options : 'production' or 'development'
+  minify: process.env.NODE_ENV === 'production'
 }
 
 
 
-
-//PLUGINS : ALL : Also sets where pipe certain actions results
+/*  PLUGINS : ALL : Also sets where pipe certain actions results
+ *****************************************************************************/
 let plugins = [
   new ExtractTextPlugin( 'styles.css' ),
   new CopyWebpackPlugin([
@@ -24,16 +26,16 @@ let plugins = [
   ])
 ];
 
-
-//PLUGINS : PROD-ONLY : Minify Scripts
-if ( envrConfig.minify ) {
+/*  PLUGINS : PROD-ONLY : Minify Scripts and stylesheets
+ *****************************************************************************/
+if ( envr.mode === 'production' ) {
   plugins = plugins.concat([
-    new webpack.DefinePlugin({ //From Reactjs.org docs 
-      'process.env.NODE_ENV': JSON.stringify( 'production' )
+    new webpack.DefinePlugin({ //From Reactjs.org, string escaped string is intended.
+      'process.env.NODE_ENV': '\'production\''
     }),
 
     new webpack.optimize.UglifyJsPlugin({
-      minimize: envrConfig.minify,
+      minimize: envr.minify,
       compress: {
         warnings: false
       }
@@ -43,7 +45,10 @@ if ( envrConfig.minify ) {
 
 
 
-//CONFIG : Actual Webpack Setup
+
+
+/*  WEBPACK : Build configuration for application webpacking
+ *****************************************************************************/
 module.exports = {
   entry: [
     'babel-polyfill', //Add babel into bundle
@@ -82,7 +87,7 @@ module.exports = {
               loader: 'css-loader', //So we can minimize
               options: { 
                 importLoaders: 1,
-                minimize: envrConfig.minify
+                minimize: envr.minify
               } 
             },
             'postcss-loader', //Auto-prefixing built-in
