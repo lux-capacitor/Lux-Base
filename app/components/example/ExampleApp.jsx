@@ -68,6 +68,29 @@ class ExampleApp extends Component {
     this.props.dispatch( fetchData() );
   }
 
+  // EXAMPLE - Simple Fetch Function in React Only (if not wanting to use Redux)
+  //           Just note, I only wrote the function to sample, not wired up.
+  //           Also, be sure to add an error check handler for 400 type errors, etc
+  //
+  // fetchShopifyApiData( id ) {
+  //   Fetch( `http://shopify.com/api/${id}` )
+  //     .then( res => {
+  //       return res.json();
+  //     })
+  //     .then( data => {
+
+  //       // SIMPLE - Flat data
+  //       this.setState({ timesPushed: data });
+
+  //       // COMPLEX - Nested data
+  //       this.setState( state => {
+  //         return {
+  //           products: data
+  //         }
+  //       })
+  //     });
+  // }
+
   generateMsg() {
     const possibleMsgs = this.props.possibleMsgs || 'OMG STOP!';
     const index = Math.floor( Math.random() * Math.floor( possibleMsgs.length ) );
